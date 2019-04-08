@@ -47,7 +47,7 @@ function print_hit(year){
     hit_tube_born.id="tube";
     var phrase = document.createElement('h1');
     phrase.className="description_tube";
-    phrase.innerText="Le tube qui a bercé ton enfance est ";
+    phrase.innerText="Le film qui a fait fureur pour ta naissance ";
     phrase.style.fontSize="1.2em";
     phrase.style.color="#3E3636";
     var song_title = document.createElement('h1');
@@ -57,7 +57,7 @@ function print_hit(year){
     song_title.style.color="#359bb7";
     var song_artist=document.createElement('h1');
     song_artist.className="printhit";
-    song_artist.innerText="de "+the_song.artist;
+    song_artist.innerText="genre:"+the_song.artist;
     song_artist.style.color="#af82b7";
     song_artist.style.fontSize="1.2em";
 
