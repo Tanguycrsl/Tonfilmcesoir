@@ -80,7 +80,7 @@ function drawYAxis(el, data, t) {
 }
 
 function drawBars(el, data, t) {
-    var color = ["#7D85E5","#49F1C3","#FC9665","#9D2F74","#36C6E4","#8FD847","#E62A30"]
+    var color = ["#7D85E5","#49F1C3","#FC9665","#9D2F74","#36C6E4","#8FD847","#E62A30","#E62A30"]
     let barsG = el.select('.bars-g');
     if (barsG.empty()) {
         barsG = el.append('g')
@@ -116,7 +116,7 @@ const svg = d3.select('.chart').append('svg')
 
 
 	
-fetch("./data/dataTop40.csv")
+fetch("./data/genre_decade.csv")
     .then((res) => res.text())
 .then((res) => {
     const data = prepareData(d3.csvParse(res));
@@ -131,7 +131,7 @@ var label = svg.append("text")
    .attr("text-anchor", "end")
    .attr("y", height - 20)
    .attr("x", width)
-   .text(1955);
+   .text(1950);
   var box = label.node().getBBox();  	
 
 d3.select('.year').text(startYear);
@@ -145,7 +145,7 @@ drawBars(svg, selectedData);
 const interval = d3.interval(() => {
         const t = d3.transition().duration(500);
 
-startYear += 5;
+startYear += 10;
 selectedData = removeGeoAreasWithNoData(sortData(data[startYear]));
 
 d3.select('.year').text(startYear);
@@ -156,7 +156,7 @@ drawBars(svg, selectedData, t);
 label.text(startYear)
 
 if (startYear === lastYear) {
-  var yearScale = d3.scale.linear().domain([1955,2009])
+  var yearScale = d3.scale.linear().domain([1950,2010])
         .range([box.x, box.x + box.width] )
 		.clamp(true);  	
    // Cancel the current transition, if any.
@@ -192,7 +192,7 @@ if (startYear === lastYear) {
 
   // Updates the display to show the specified year.
   function displayYear(Year) {
-	const  x = 5*(Math.floor(Math.abs(Year/5)))
+	const  x = 5*(Math.floor(Math.abs(Year/10)))
     selectedData = removeGeoAreasWithNoData(sortData(data[x]));
 	d3.select('.year').text(x);
 	yScale.domain(selectedData.map(yAccessor));
