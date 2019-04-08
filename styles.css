@@ -403,6 +403,14 @@ hr {
     margin: auto; 
 }
 
+#outro{
+	background-color:#3e3636;
+	padding-top: 10px;
+	border-radius: 10px;
+	color: #ebebe0;
+    H2 { text-align: center }
+}
+
 .imagekingqueen{
     margin: auto;
 }
