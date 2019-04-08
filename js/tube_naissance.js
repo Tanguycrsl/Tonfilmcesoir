@@ -2,9 +2,9 @@ var datasets={}
 
 function load_data() {
     //load data
-    d3.csv('./data/best_songs_top_ten_per_year.csv', function (data) {
+    d3.csv('./data/top_movies.csv', function (data) {
         data.forEach(function (d) {
-            datasets[d.Year] = {track: d.Track, weeks: parseInt(d.Weeks), artist:d.Artist};
+            datasets[d.Year] = {track: d.Title, weeks: parseInt(d.Popularity), artist:d.Genre};
         });
     });
 }
