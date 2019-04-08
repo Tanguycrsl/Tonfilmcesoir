@@ -53,7 +53,7 @@ function yAccessor(d) {
 
 const xScale = d3.scaleLinear()
     .range([0, width])
-    .domain([0, 280]);
+    .domain([0, 10]);
 
 const yScale = d3.scaleBand()
     .rangeRound([0, height], 0.1)
