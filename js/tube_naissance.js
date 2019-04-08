@@ -36,7 +36,7 @@ function print_hit(year){
     span1.style.fontSize="2em";
     var span2=document.createElement('p');
     span2.className="printhit";
-    span2.innerText="semaines \n au top";
+    span2.innerText="Indice de popularité";
     span2.style.fontSize="0.6em";
     subdiv.appendChild(span1);
     subdiv.appendChild(span2);
@@ -49,15 +49,15 @@ function print_hit(year){
     phrase.className="description_tube";
     phrase.innerText="Le film qui a fait fureur pour ta naissance ";
     phrase.style.fontSize="1.2em";
-    phrase.style.color="#3E3636";
+    phrase.style.color="#1E90FF";
     var song_title = document.createElement('h1');
     song_title.className="description_tube";
     song_title.id="the_song";
     song_title.innerText=the_song.label;
-    song_title.style.color="#359bb7";
+    song_title.style.color="#DC143C";
     var song_artist=document.createElement('h1');
     song_artist.className="printhit";
-    song_artist.innerText="genre:"+the_song.artist;
+    song_artist.innerText="Genre: "+the_song.artist;
     song_artist.style.color="#af82b7";
     song_artist.style.fontSize="1.2em";
 
