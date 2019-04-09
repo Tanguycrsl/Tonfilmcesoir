@@ -64,19 +64,17 @@ body {
 .big-container {
   display: flex;
   flex-direction: row;
-  width: 150px;
+  width: 200px;
 }
 
 .text {
   height: 30px;
   width: 30px;
-  background-color: green;
 }
 
 .container {
   width: 20px;
   heigt: 20px;
-  background-color: green;
   flex: 1;
 }
 
