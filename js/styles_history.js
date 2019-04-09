@@ -53,7 +53,7 @@ function yAccessor(d) {
 
 const xScale = d3.scaleLinear()
     .range([0, width])
-    .domain([0, 20]);
+    .domain([0, 15]);
 
 const yScale = d3.scaleBand()
     .rangeRound([0, height], 0.1)
@@ -156,7 +156,7 @@ drawBars(svg, selectedData, t);
 label.text(startYear)
 
 if (startYear === lastYear) {
-  var yearScale = d3.scale.linear().domain([1950,2010])
+  var yearScale = d3.scale.linear().domain([1950,2011])
         .range([box.x, box.x + box.width] )
 		.clamp(true);  	
    // Cancel the current transition, if any.
@@ -185,7 +185,7 @@ if (startYear === lastYear) {
       displayYear(yearScale.invert(d3.mouse(this)[0]));
   }
 }
-}, 1000);
+}, 700);
 
 
 
