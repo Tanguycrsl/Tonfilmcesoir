@@ -53,7 +53,7 @@ function yAccessor(d) {
 
 const xScale = d3.scaleLinear()
     .range([0, width])
-    .domain([0, 10]);
+    .domain([0, 20]);
 
 const yScale = d3.scaleBand()
     .rangeRound([0, height], 0.1)
@@ -129,7 +129,7 @@ let geoAreas = selectedData.map(yAccessor);
 var label = svg.append("text")
    .attr("class", "year label")
    .attr("text-anchor", "end")
-   .attr("y", height - 20)
+   .attr("y", height - 5)
    .attr("x", width)
    .text(1950);
   var box = label.node().getBBox();  	
@@ -192,7 +192,7 @@ if (startYear === lastYear) {
 
   // Updates the display to show the specified year.
   function displayYear(Year) {
-	const  x = 5*(Math.floor(Math.abs(Year/10)))
+	const  x = 10*(Math.floor(Math.abs(Year/10)))
     selectedData = removeGeoAreasWithNoData(sortData(data[x]));
 	d3.select('.year').text(x);
 	yScale.domain(selectedData.map(yAccessor));
