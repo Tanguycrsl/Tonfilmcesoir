@@ -186,6 +186,32 @@ h1#header
     }
 }
 
+.big-container {
+  display: flex;
+  flex-direction: row;
+  width: 150px;
+}
+
+.text {
+  height: 30px;
+  width: 30px;
+  background-color: green;
+}
+
+.container {
+  width: 20px;
+  heigt: 20px;
+  background-color: green;
+  flex: 1;
+}
+
+.text {
+  opacity: 0;
+}
+
+.text:hover {
+  opacity: 1;
+}
 
 /* -----------------------------------------------
 --------------------------------------------------
