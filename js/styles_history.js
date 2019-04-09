@@ -1,7 +1,7 @@
 'use strict';
 
 
-const margin = {top: 20, right: 350, bottom: 40, left: 50};
+const margin = {top: 15, right: 350, bottom: 40, left: 50};
 const width = 960 - margin.left - margin.right;
 const height = 400 - margin.top - margin.bottom;
 const percentFormat = d3.format('.0%');
@@ -53,7 +53,7 @@ function yAccessor(d) {
 
 const xScale = d3.scaleLinear()
     .range([0, width])
-    .domain([0, 20]);
+    .domain([0, 15]);
 
 const yScale = d3.scaleBand()
     .rangeRound([0, height], 0.1)
@@ -185,7 +185,7 @@ if (startYear === lastYear) {
       displayYear(yearScale.invert(d3.mouse(this)[0]));
   }
 }
-}, 700);
+}, 1000);
 
 
 
