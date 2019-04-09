@@ -527,7 +527,7 @@ htitle2{
 
 .text {
   height: 30px;
-  width: 30px;
+  width: 100px;
 }
 
 .container {
@@ -538,6 +538,7 @@ htitle2{
 
 .text {
   opacity: 0;
+	position: absolute;
 }
 
 .text:hover {
