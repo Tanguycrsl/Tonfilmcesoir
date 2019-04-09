@@ -526,13 +526,13 @@ htitle2{
 }
 
 .text {
-  height: 30px;
-  width: 100px;
+  height: 20px;
+  width: 200px;
 }
 
 .container {
-  width: 20px;
-  heigt: 20px;
+  width: 200px;
+  heigt: 200px;
   flex: 1;
 }
 
