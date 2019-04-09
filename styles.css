@@ -545,6 +545,13 @@ htitle2{
   opacity: 1;
 }
 
+.container2 {
+  width: 200px;
+  heigt: 200px;
+  flex: 1;
+}
+
+
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 footer{
