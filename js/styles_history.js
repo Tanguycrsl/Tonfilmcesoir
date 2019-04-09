@@ -129,7 +129,7 @@ let geoAreas = selectedData.map(yAccessor);
 var label = svg.append("text")
    .attr("class", "year label")
    .attr("text-anchor", "end")
-   .attr("y", height - 5)
+   .attr("y", height - 10)
    .attr("x", width)
    .text(1950);
   var box = label.node().getBBox();  	
@@ -156,7 +156,7 @@ drawBars(svg, selectedData, t);
 label.text(startYear)
 
 if (startYear === lastYear) {
-  var yearScale = d3.scale.linear().domain([1950,2011])
+  var yearScale = d3.scale.linear().domain([1950,2010])
         .range([box.x, box.x + box.width] )
 		.clamp(true);  	
    // Cancel the current transition, if any.
