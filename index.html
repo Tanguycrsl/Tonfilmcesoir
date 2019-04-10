@@ -378,58 +378,7 @@
 </div>
 	<br><br>
 		<htitle> Le top 10 de splus grosses bouses de tout les temps </htitle>
-	<script>
-			$(function() {
-
-				/* CD covers */
-
-				<!-- if ($.fn.reflect) { -->
-					<!-- $('.photos .cover').reflect(); -->
-				<!-- } -->
-
-				$('.photos').coverflow({
-						index:			3,
-						density:		2,
-						innerOffset:	50,
-						innerScale:		.7,
-						animateStep:	function(event, cover, offset, isVisible, isMiddle, sin, cos) {
-							if (isVisible) {
-								if (isMiddle) {
-									$(cover).css({
-										'filter':			'none',
-										'-webkit-filter':	'none'
-									});
-								} else {
-									var brightness	= 1 + Math.abs(sin),
-										contrast	= 1 - Math.abs(sin),
-										filter		= 'contrast('+contrast+') brightness('+brightness+')';
-									$(cover).css({
-										'filter':			filter,
-										'-webkit-filter':	filter
-									});
-								}
-							}
-						},
 	
-					
-					confirm:		function() {
-						console.log('Confirm');
-					},
-
-					<!-- before:			function() { -->
-						<!-- $('#photos-name').stop(true); -->
-					<!-- }, -->
-
-					select:			function(event, cover) {
-						var img = $(cover).children().andSelf().filter('img').last();
-						$('#photos-name').text(img.data('name') || 'unknown').last();
-						$('#photos-year').text(img.data('year') || 'unknown').stop(true);
-					},
-				});	
-
-			
-			});
-		</script>
 		<div class="photos" >
 			<img class="cover" data-name="Seven Samourai - Akira Kurosawa" data-year="1950s" src="images/seven_samourai.jpg" width="200" height="200"/>
 			<img class="cover" data-name="Psycho - Alfred Hitchcock" data-year="1960s" src="images/psycho.jpg" width="200" height="200"/>
@@ -445,29 +394,6 @@
 		</div>
 		<br><br> trolortlrotlrtol
 	</div>
-                
-	
-
-            <!-- outil interactif -->
-            <div id="outer">
-
-                <!-- import Chartjs plugin script -->
-                <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js'></script>
-                <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js'></script>
-
-                <script src="https://www.w3schools.com/lib/w3data.js"></script>
-                <script src="js/topten_graph.js"></script>
-
-                <div id="dataviz">
-
-                    <script>replay();</script>
-
-                    <div id="match_artists" class="play_button" onClick="plotdata()"> Let's Go !</div>
-
-                </div>
-            </div>
-
-        </div>
 
         <!-- Une rubrique -->
         <hr>
