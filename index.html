@@ -323,35 +323,35 @@
 		    </div>
                 <div class="col-lg-2">
 			<div class="container" style="background-image: url('images/france.png'); background-repeat: no-repeat; width: 220px;height: 220px; background-size: 100%;">
-			<div class="text" style="color: black" ;=""> The Pianist - 2002 <br>Polisse - 2011 <br>Casino - 1995 <br>Le fabuleux destin d'Amélie Poulain - 2001 <br>Terminator 2 - 1991 
+			<div class="text" style="color: black" ;=""> 1: The Pianist - 2002 <br>2: Polisse - 2011 <br>3: Casino - 1995 <br>4: Le fabuleux destin d'Amélie Poulain - 2001 <br>5: Terminator 2 - 1991 
 			</div>
 		</div>
                 </div><!-- /.col-lg-4 -->
 		    
                 <div class="col-lg-2">
 			<div class="container" style="background-image: url('images/usa.png'); background-repeat: no-repeat; width: 220px;height: 240px;background-size: 100%;">
-			<div class="text" style="color: black" ;=""> The Pianist - 2002 <br>Polisse - 2011 <br>Casino - 1995 <br>Le fabuleux destin d'Amélie Poulain - 2001 <br>Terminator 2 - 1991 /div>
+			<div class="text" style="color: black" ;=""> 1: The Shawshank Redemption - 1994 <br>2: The Godfather - 1972 <br>3: Schindler's List - 1993 <br>4: Whiplash - 2014 <br>5: Pulp Fiction - 1994 
 			</div>
 		</div>
                 </div><!-- /.col-lg-4 -->
 		    
                 <div class="col-lg-2">
-			<div class="container" style="background-image: url('images/italy.png');background-repeat: no-repeat; width: 220px;height: 220px; background-size: 100%;">
-			<div class="text" style="color: black" ;=""> The Pianist - 2002 <br>Polisse - 2011 <br>Casino - 1995 <br>Le fabuleux destin d'Amélie Poulain - 2001 <br>Terminator 2 - 1991 /div>
+			<div class="container" style="background-image: url('images/canada.png');background-repeat: no-repeat; width: 220px;height: 220px; background-size: 100%;">
+			<div class="text" style="color: black" ;=""> Interstellar - 2014 <br>Room - 2015 <br>Incendies - 2010 <br>Good Will Hunting - 1997 <br>Spotlight - 2015 /div>
 			</div>
 		</div>
                 </div>
 		    
 		    <div class="col-lg-2">
 			<div class="container" style="background-image: url('images/germany.png');background-repeat: no-repeat; width: 220px;height: 220px; background-size: 100%;">
-			<div class="text" style="color: black" ;=""> The Pianist - 2002 <br>Polisse - 2011 <br>Casino - 1995 <br>Le fabuleux destin d'Amélie Poulain - 2001 <br>Terminator 2 - 1991 /div>
+			<div class="text" style="color: black" ;=""> 1: Fight Club - 1999 <br>2: Metropolis - 1927 <br>3: Das Leben der Anderen	 - 2006 <br>4: Das Boot - 1981 <br>5: Inglourious Basterds - 2009 
 			</div>
 		</div>
                 </div><!-- /.col-lg-4 -->
 		   
 		    <div class="col-lg-2">
 			<div class="container" style="background-image: url('images/uk.jpg');background-repeat: no-repeat; width: 220px;height: 220px; background-size: 100%;">
-			<div class="text" style="color: black" ;=""> The Pianist - 2002 <br>Polisse - 2011 <br>Casino - 1995 <br>Le fabuleux destin d'Amélie Poulain - 2001 <br>Terminator 2 - 1991 /div>
+			<div class="text" style="color: black" ;=""> 1: The Dark Knight - 2008 <br>2: Inception - 2010 <br>3: The Imittation Game - 2014 <br>4: doctor strangelove or how i learned to stop worrying and love the bomb - 1964 <br>5: The Grand Budapest Hotel - 2014 
 			</div>
 		</div>
                 </div>
@@ -376,18 +376,72 @@
 	</div>
 	</div>
 	<br><br>
-		<htitle> Le top 10 de splus grosses bouses de tout les temps </htitle>
+		<htitle> Le top 5 des plus grosses bouses de tout les temps </htitle>
+	       
+			<script>
+			$(function() {
+
+				/* CD covers */
+
+				<!-- if ($.fn.reflect) { -->
+					<!-- $('.photos .cover').reflect(); -->
+				<!-- } -->
+
+				$('.photos').coverflow({
+						index:			3,
+						density:		2,
+						innerOffset:	50,
+						innerScale:		.7,
+						animateStep:	function(event, cover, offset, isVisible, isMiddle, sin, cos) {
+							if (isVisible) {
+								if (isMiddle) {
+									$(cover).css({
+										'filter':			'none',
+										'-webkit-filter':	'none'
+									});
+								} else {
+									var brightness	= 1 + Math.abs(sin),
+										contrast	= 1 - Math.abs(sin),
+										filter		= 'contrast('+contrast+') brightness('+brightness+')';
+									$(cover).css({
+										'filter':			filter,
+										'-webkit-filter':	filter
+									});
+								}
+							}
+						},
+	
+					
+					confirm:		function() {
+						console.log('Confirm');
+					},
+
+					<!-- before:			function() { -->
+						<!-- $('#photos-name').stop(true); -->
+					<!-- }, -->
+
+					select:			function(event, cover) {
+						var img = $(cover).children().andSelf().filter('img').last();
+						$('#photos-name').text(img.data('name') || 'unknown').last();
+						$('#photos-year').text(img.data('year') || 'unknown').stop(true);
+					},
+				});	
+
+			
+			});
+		</script>
 	
 		<div class="photos" >
 			<img class="cover" data-name="Epic Movie" data-year="5eme" src="images/epic.jpg" width="200" height="200"/>
 			<img class="cover" data-name="FearDotCOM" data-year="4eme" src="images/fear.jpg" width="200" height="200"/>
 			<img class="cover" data-name="Battlefield Earth" data-year="3eme" src="images/batle.jpg" width="200" height="200"/>
 			<img class="cover" data-name="Disaster Movie" data-year="2eme" src="images/disaster.jpg" width="200" height="200"/>
-			<img class="cover" data-name="Dragonball Evolution" data-year="1er" src="images/dbze.jpg" width="200" height="200"/>
+			<img class="cover" data-name="Dragonball Evolution" data-year="1er" src="images/bdze.jpg" width="200" height="200"/>
 			</div>
 		<div id="photos-info">
 			<div id="photos-year"></div>
 			<div id="photos-name"></div>
+			
 		</div>
 		<br><br> 
 		trolortlrotlrtol
