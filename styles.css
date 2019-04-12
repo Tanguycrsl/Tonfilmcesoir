@@ -435,6 +435,14 @@ hr {
     margin-right:20px;
 }
 
+#hits2
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: flex-start;
+    margin-right:20px;
+}
 #relevantnumber
 {
   position: relative;
