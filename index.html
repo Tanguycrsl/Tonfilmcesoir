@@ -162,7 +162,7 @@
 
          <div id="evolution">
             <img src="images/Genre.png" alt="rock" width="140" height="140"> <br>
-            <htitle> Tu t’ennuies, t’as rien à faire ? Envie de mater un bon film sur ton canapé en mangeant du Nutella ? Nous sommes là pour t’aider ! </htitle>
+            <htitle> Envie de mater un bon film sur ton canapé en mangeant du Nutella ? Nous sommes là pour t’aider ! </htitle>
             <br> <dd><dd><dd><dd><hsubtitle><i>Un bon film : c’est plutôt un bon thriller ? Un film où tu te fends la poire ? Un film ou tu vides ton paquet de mouchoirs? Découvre!</i></hsubtitle>
        						
 	
@@ -312,6 +312,77 @@
 	
 		     	</div>	
     </div>
+		
+		<htitle> Le top 5 des plus grosses bouses de tout les temps </htitle>
+	       
+			<script>
+			$(function() {
+
+				/* CD covers */
+
+				<!-- if ($.fn.reflect) { -->
+					<!-- $('.photos .cover').reflect(); -->
+				<!-- } -->
+
+				$('.photos').coverflow({
+						index:			3,
+						density:		2,
+						innerOffset:	50,
+						innerScale:		.7,
+						animateStep:	function(event, cover, offset, isVisible, isMiddle, sin, cos) {
+							if (isVisible) {
+								if (isMiddle) {
+									$(cover).css({
+										'filter':			'none',
+										'-webkit-filter':	'none'
+									});
+								} else {
+									var brightness	= 1 + Math.abs(sin),
+										contrast	= 1 - Math.abs(sin),
+										filter		= 'contrast('+contrast+') brightness('+brightness+')';
+									$(cover).css({
+										'filter':			filter,
+										'-webkit-filter':	filter
+									});
+								}
+							}
+						},
+	
+					
+					confirm:		function() {
+						console.log('Confirm');
+					},
+
+					<!-- before:			function() { -->
+						<!-- $('#photos-name').stop(true); -->
+					<!-- }, -->
+
+					select:			function(event, cover) {
+						var img = $(cover).children().andSelf().filter('img').last();
+						$('#photos-name').text(img.data('name') || 'unknown').last();
+						$('#photos-year').text(img.data('year') || 'unknown').stop(true);
+					},
+				});	
+
+			
+			});
+		</script>
+	
+		<div class="photos" >
+			<img class="cover" data-name="Epic Movie" data-year="5eme" src="images/epic.jpg" width="200" height="200"/>
+			<img class="cover" data-name="FearDotCOM" data-year="4eme" src="images/fear.jpg" width="200" height="200"/>
+			<img class="cover" data-name="Battlefield Earth" data-year="3eme" src="images/batle.jpg" width="200" height="200"/>
+			<img class="cover" data-name="Disaster Movie" data-year="2eme" src="images/disaster.jpg" width="200" height="200"/>
+			<img class="cover" data-name="Dragonball Evolution" data-year="1er" src="images/bdze.jpg" width="200" height="200"/>
+			</div>
+		<div id="photos-info">
+			<div id="photos-year"></div>
+			<div id="photos-name"></div>
+			
+		</div>
+		<br><br> 
+		trolortlrotlrtol
+	</div>
 	 
 
         <!-- Une rubrique -->
