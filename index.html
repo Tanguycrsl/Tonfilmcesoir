@@ -380,6 +380,75 @@
 	
 		     	</div>	
     </div>
+		 
+		 <br>
+		 
+		 <htitle> Le top 5 des plus grosses bouses de tout les temps </htitle>
+	       
+			<script>
+			$(function() {
+
+				/* CD covers */
+
+				<!-- if ($.fn.reflect) { -->
+					<!-- $('.photos .cover').reflect(); -->
+				<!-- } -->
+
+				$('.photos').coverflow({
+						index:			3,
+						density:		2,
+						innerOffset:	50,
+						innerScale:		.7,
+						animateStep:	function(event, cover, offset, isVisible, isMiddle, sin, cos) {
+							if (isVisible) {
+								if (isMiddle) {
+									$(cover).css({
+										'filter':			'none',
+										'-webkit-filter':	'none'
+									});
+								} else {
+									var brightness	= 1 + Math.abs(sin),
+										contrast	= 1 - Math.abs(sin),
+										filter		= 'contrast('+contrast+') brightness('+brightness+')';
+									$(cover).css({
+										'filter':			filter,
+										'-webkit-filter':	filter
+									});
+								}
+							}
+						},
+	
+					
+					confirm:		function() {
+						console.log('Confirm');
+					},
+
+					<!-- before:			function() { -->
+						<!-- $('#photos-name').stop(true); -->
+					<!-- }, -->
+
+					select:			function(event, cover) {
+						var img = $(cover).children().andSelf().filter('img').last();
+						$('#photos-name').text(img.data('name') || 'unknown').last();
+						$('#photos-year').text(img.data('year') || 'unknown').stop(true);
+					},
+				});	
+
+			
+			});
+		</script>
+	
+		<div class="photos" >
+			<img class="cover" data-name="Epic Movie" data-year="5eme" src="images/epic.jpg" width="200" height="200"/>
+			<img class="cover" data-name="FearDotCOM" data-year="4eme" src="images/fear.jpg" width="200" height="200"/>
+			<img class="cover" data-name="Battlefield Earth" data-year="3eme" src="images/batle.jpg" width="200" height="200"/>
+			<img class="cover" data-name="Disaster Movie" data-year="2eme" src="images/disaster.jpg" width="200" height="200"/>
+			<img class="cover" data-name="Dragonball Evolution" data-year="1er" src="images/bdze.jpg" width="200" height="200"/>
+			</div>
+		<div id="photos-info">
+			<div id="photos-year"></div>
+			<div id="photos-name"></div>
+		</div>
 		
 		
 	 
