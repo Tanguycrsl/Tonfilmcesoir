@@ -36,7 +36,7 @@ body {
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/cineman1.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/Cineman1.jpg');
     /*background-image: url("images/main_title.jpg");*/
     background-size: cover;
     display: table;
@@ -112,7 +112,7 @@ h1#header
 {
   color: #ffffff;
   height: 258px;
-  background: url(images/cineman1.jpg);
+  background: url(images/Cineman1.jpg);
   background-repeat: no-repeat;
   background-size:cover;
   background-position: center;
